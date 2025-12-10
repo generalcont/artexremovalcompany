@@ -3,6 +3,8 @@ import { Footer } from "./Footer";
 import { Button } from "@/components/ui/button";
 import { Check, Leaf, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { serviceAreas, createSlug } from "@/data/serviceAreas";
+import { useMemo } from "react";
 
 interface AreaPageLayoutProps {
   areaName: string;
@@ -10,15 +12,16 @@ interface AreaPageLayoutProps {
   neighborhoods: string[];
 }
 
-const otherAreas = [
-  { name: "Atlanta", href: "/service-areas/atlanta" },
-  { name: "Miami", href: "/service-areas/miami" },
-  { name: "Los Angeles", href: "/service-areas/los-angeles" },
-  { name: "New York", href: "/service-areas/new-york" },
-  { name: "Chicago", href: "/service-areas/chicago" },
-];
-
 export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPageLayoutProps) {
+  // Get other areas (excluding current one) for sidebar - show random selection
+  const otherAreas = useMemo(() => {
+    const currentSlug = createSlug(areaName);
+    return serviceAreas
+      .filter(area => area.slug !== currentSlug)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
+  }, [areaName]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -65,21 +68,23 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
               </p>
 
               {/* Areas We Serve */}
-              <div className="border-t border-border pt-12">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
-                  Areas we Serve
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {neighborhoods.map((neighborhood, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-primary-foreground" />
+              {neighborhoods.length > 0 && (
+                <div className="border-t border-border pt-12">
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
+                    Areas we Serve
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {neighborhoods.map((neighborhood, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                          <Check className="w-4 h-4 text-primary-foreground" />
+                        </div>
+                        <span className="text-muted-foreground">{neighborhood}</span>
                       </div>
-                      <span className="text-muted-foreground">{neighborhood}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* CTA Section */}
               <div className="mt-16 bg-accent rounded-2xl p-8 md:p-12">
@@ -119,8 +124,8 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                 <div className="space-y-3">
                   {otherAreas.map((area) => (
                     <Link
-                      key={area.name}
-                      to={area.href}
+                      key={area.slug}
+                      to={`/service-areas/${area.slug}`}
                       className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/50 transition-colors group"
                     >
                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
@@ -132,6 +137,11 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                     </Link>
                   ))}
                 </div>
+                <Link to="/service-areas" className="block mt-4">
+                  <Button variant="outline" className="w-full">
+                    View All Areas
+                  </Button>
+                </Link>
               </div>
 
               {/* Contact Card */}
