@@ -1,42 +1,69 @@
-import { Phone, Search, Menu, X, Leaf } from "lucide-react";
+import { Phone, Menu, X, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#services" },
-  { name: "About Us", href: "#about" },
-  { name: "Why Us", href: "#why-us" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "About Us", href: "/#about" },
+  { name: "Why Us", href: "/#why-us" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+    if (href.startsWith("/#")) {
+      if (location.pathname !== "/") {
+        // Navigate to home first, then scroll
+        window.location.href = href;
+      } else {
+        // Already on home, just scroll
+        const element = document.querySelector(href.substring(1));
+        element?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
       <div className="container-custom">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-heading text-xl font-semibold text-foreground">
               Clany<span className="text-primary">Eco</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
-              >
-                {link.name}
-              </a>
+              link.href.startsWith("/#") ? (
+                <button
+                  key={link.name}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -51,9 +78,11 @@ export function Header() {
               </div>
               <span className="font-semibold">+1 (180) 567-8990</span>
             </a>
-            <Button variant="hero" size="default">
-              Free Quote
-            </Button>
+            <Link to="/free-quote">
+              <Button variant="hero" size="default">
+                Free Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -74,19 +103,31 @@ export function Header() {
           <div className="lg:hidden py-4 border-t border-border animate-fade-up">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith("/#") ? (
+                  <button
+                    key={link.name}
+                    onClick={() => handleNavClick(link.href)}
+                    className="text-foreground hover:text-primary transition-colors font-medium py-2 text-left"
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <div className="pt-4 border-t border-border">
-                <Button variant="hero" className="w-full">
-                  Free Quote
-                </Button>
+                <Link to="/free-quote" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="hero" className="w-full">
+                    Free Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
