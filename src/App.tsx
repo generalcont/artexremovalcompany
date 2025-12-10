@@ -4,6 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Services from "./pages/Services";
+import HouseCleaning from "./pages/services/HouseCleaning";
+import OfficeCleaning from "./pages/services/OfficeCleaning";
+import DeepCleaning from "./pages/services/DeepCleaning";
+import MoveInOutCleaning from "./pages/services/MoveInOutCleaning";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,6 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/house-cleaning" element={<HouseCleaning />} />
+          <Route path="/services/office-cleaning" element={<OfficeCleaning />} />
+          <Route path="/services/deep-cleaning" element={<DeepCleaning />} />
+          <Route path="/services/move-in-out-cleaning" element={<MoveInOutCleaning />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
