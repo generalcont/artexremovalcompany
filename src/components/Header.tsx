@@ -1,7 +1,8 @@
-import { Phone, Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoIcon from "@/assets/logo-icon.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -20,13 +21,21 @@ export function Header() {
     setMobileMenuOpen(false);
     if (href.startsWith("/#")) {
       if (location.pathname !== "/") {
-        // Navigate to home first, then scroll
         window.location.href = href;
       } else {
-        // Already on home, just scroll
         const element = document.querySelector(href.substring(1));
         element?.scrollIntoView({ behavior: "smooth" });
       }
+    }
+  };
+
+  const scrollToQuoteForm = () => {
+    setMobileMenuOpen(false);
+    if (location.pathname !== "/") {
+      window.location.href = "/#quote";
+    } else {
+      const element = document.querySelector("#quote");
+      element?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -35,13 +44,16 @@ export function Header() {
       <div className="container-custom">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <img src={logoIcon} alt="Artex Removal Company Logo" className="w-10 h-10 object-contain" />
+            <div className="flex flex-col">
+              <span className="font-heading text-lg font-bold text-foreground leading-tight">
+                Artex Removal
+              </span>
+              <span className="font-heading text-xs font-semibold text-primary leading-tight">
+                Company
+              </span>
             </div>
-            <span className="font-heading text-xl font-semibold text-foreground">
-              Clany<span className="text-primary">Eco</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -69,20 +81,9 @@ export function Header() {
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="tel:+11805678990"
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
-            >
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <Phone className="w-4 h-4" />
-              </div>
-              <span className="font-semibold">+1 (180) 567-8990</span>
-            </a>
-            <Link to="/free-quote">
-              <Button variant="hero" size="default">
-                Free Quote
-              </Button>
-            </Link>
+            <Button variant="hero" size="default" onClick={scrollToQuoteForm}>
+              Get Free Quote
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -123,11 +124,9 @@ export function Header() {
                 )
               ))}
               <div className="pt-4 border-t border-border">
-                <Link to="/free-quote" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="hero" className="w-full">
-                    Free Quote
-                  </Button>
-                </Link>
+                <Button variant="hero" className="w-full" onClick={scrollToQuoteForm}>
+                  Get Free Quote
+                </Button>
               </div>
             </div>
           </div>

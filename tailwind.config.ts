@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Playfair Display', 'serif'],
-        body: ['DM Sans', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,14 +51,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        eco: {
-          DEFAULT: "hsl(var(--eco-green))",
-          light: "hsl(var(--eco-green-light))",
-          dark: "hsl(var(--eco-green-dark))",
-        },
-        sunny: {
-          DEFAULT: "hsl(var(--sunny-yellow))",
-          light: "hsl(var(--sunny-yellow-light))",
+        artex: {
+          DEFAULT: "hsl(var(--artex-blue))",
+          light: "hsl(var(--artex-blue-light))",
+          dark: "hsl(var(--artex-blue-dark))",
+          navy: "hsl(var(--artex-navy))",
+          orange: "hsl(var(--artex-orange))",
+          "orange-light": "hsl(var(--artex-orange-light))",
         },
         cream: "hsl(var(--cream))",
         charcoal: "hsl(var(--charcoal))",
@@ -107,9 +106,9 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
-        "leaf-sway": {
-          "0%, 100%": { transform: "rotate(0deg)" },
-          "50%": { transform: "rotate(5deg)" },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.5)" },
         },
       },
       animation: {
@@ -120,7 +119,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "float": "float 3s ease-in-out infinite",
-        "leaf-sway": "leaf-sway 4s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },

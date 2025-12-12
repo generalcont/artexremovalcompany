@@ -1,56 +1,52 @@
-import { FileText, Wrench, Clock, Shield, Leaf, Users } from "lucide-react";
+import { Shield, Wrench, Clock, Award, CheckCircle, Users } from "lucide-react";
 
 const reasons = [
   {
-    icon: FileText,
-    title: "Free Quote & Instant Pricing",
-    description: "Get instant pricing and get your free quote cleaning all online.",
+    icon: Shield,
+    title: "Fully Insured & Certified",
+    description: "All work is fully insured with certified asbestos awareness training.",
   },
   {
     icon: Wrench,
-    title: "Equipment & Supplies Provided",
-    description: "We bring all the necessary cleaning supplies and equipment.",
+    title: "Professional Equipment",
+    description: "We use industry-leading tools and dust containment systems.",
   },
   {
     icon: Clock,
-    title: "Flexible Scheduling",
-    description: "Book your cleaning at a time that works best for your schedule.",
+    title: "Fast Turnaround",
+    description: "Most rooms completed in just one day with minimal disruption.",
   },
   {
-    icon: Shield,
-    title: "Insured & Bonded",
-    description: "All our cleaners are fully insured and background checked.",
+    icon: Award,
+    title: "Quality Guaranteed",
+    description: "Every project finished to the highest standards with warranty included.",
   },
   {
-    icon: Leaf,
-    title: "Eco-Friendly Products",
-    description: "We use environmentally safe cleaning products for your family.",
+    icon: CheckCircle,
+    title: "Asbestos Testing Included",
+    description: "Free asbestos testing for all pre-1999 artex before removal begins.",
   },
   {
     icon: Users,
-    title: "Trained Professionals",
-    description: "Our team undergoes rigorous training for quality service.",
+    title: "Experienced Team",
+    description: "Over 10 years experience with 500+ successful projects completed.",
   },
 ];
 
 export function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="py-24 bg-cream">
+    <section id="why-us" className="py-24 bg-secondary">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="section-label inline-flex items-center gap-2">
-            <svg width="20" height="26" viewBox="0 0 60 80" className="text-primary">
-              <path
-                fill="currentColor"
-                d="M30 0C30 0 60 30 60 50C60 70 45 80 30 80C15 80 0 70 0 50C0 30 30 0 30 0Z"
-              />
-            </svg>
-            Why Choose Us
-          </span>
+          <span className="section-label">Why Choose Us</span>
           <h2 className="section-title mt-4">
-            We Are Experienced & We Have Expert Teams
+            The Artex Removal Experts You Can Trust
           </h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            We're not just another decorating company - we're specialists dedicated 
+            to safe, professional artex removal.
+          </p>
         </div>
 
         {/* Features Grid */}
@@ -66,7 +62,7 @@ export function WhyChooseUsSection() {
                 <reason.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
 
-              <h3 className="text-xl font-heading font-semibold text-foreground mb-3">
+              <h3 className="text-xl font-heading font-bold text-foreground mb-3">
                 {reason.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
