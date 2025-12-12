@@ -7,10 +7,12 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import ServiceAreas from "./pages/ServiceAreas";
 import AreaPage from "./pages/service-areas/AreaPage";
-import HouseCleaning from "./pages/services/HouseCleaning";
-import OfficeCleaning from "./pages/services/OfficeCleaning";
-import DeepCleaning from "./pages/services/DeepCleaning";
-import MoveInOutCleaning from "./pages/services/MoveInOutCleaning";
+import ArtexCeilingRemoval from "./pages/services/ArtexCeilingRemoval";
+import SmoothPlastering from "./pages/services/SmoothPlastering";
+import AsbestosTesting from "./pages/services/AsbestosTesting";
+import WallArtexRemoval from "./pages/services/WallArtexRemoval";
+import CeilingRepair from "./pages/services/CeilingRepair";
+import TexturedCoatingRemoval from "./pages/services/TexturedCoatingRemoval";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,10 +26,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/house-cleaning" element={<HouseCleaning />} />
-          <Route path="/services/office-cleaning" element={<OfficeCleaning />} />
-          <Route path="/services/deep-cleaning" element={<DeepCleaning />} />
-          <Route path="/services/move-in-out-cleaning" element={<MoveInOutCleaning />} />
+          <Route path="/services/artex-ceiling-removal" element={<ArtexCeilingRemoval />} />
+          <Route path="/services/smooth-plastering" element={<SmoothPlastering />} />
+          <Route path="/services/asbestos-testing" element={<AsbestosTesting />} />
+          <Route path="/services/wall-artex-removal" element={<WallArtexRemoval />} />
+          <Route path="/services/ceiling-repair" element={<CeilingRepair />} />
+          <Route path="/services/textured-coating-removal" element={<TexturedCoatingRemoval />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/service-areas/:slug" element={<AreaPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

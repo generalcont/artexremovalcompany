@@ -4,10 +4,12 @@ import logoIcon from "@/assets/logo-icon.png";
 
 const footerLinks = {
   services: [
-    { name: "Artex Removal", href: "/services" },
-    { name: "Ceiling Plastering", href: "/services" },
-    { name: "Asbestos Testing", href: "/services" },
-    { name: "Full Renovations", href: "/services" },
+    { name: "Artex Ceiling Removal", href: "/services/artex-ceiling-removal" },
+    { name: "Smooth Plastering", href: "/services/smooth-plastering" },
+    { name: "Asbestos Testing", href: "/services/asbestos-testing" },
+    { name: "Wall Artex Removal", href: "/services/wall-artex-removal" },
+    { name: "Ceiling Repair", href: "/services/ceiling-repair" },
+    { name: "Textured Coating Removal", href: "/services/textured-coating-removal" },
   ],
   company: [
     { name: "About Us", href: "/#about" },
