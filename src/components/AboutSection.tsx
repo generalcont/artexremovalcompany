@@ -1,12 +1,25 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Award, Users, Clock } from "lucide-react";
+import beforeAfterImage from "@/assets/artex-before-after.jpg";
 
 const features = [
-  "We always keep you up to date on your cleaning",
-  "The cleaners treat your home like their own home",
+  "Fully trained and certified specialists",
+  "Complete asbestos testing included",
+  "Minimal disruption to your home",
+];
+
+const stats = [
+  { icon: Award, value: "10+", label: "Years Experience" },
+  { icon: Users, value: "500+", label: "Happy Customers" },
+  { icon: Clock, value: "24h", label: "Quote Response" },
 ];
 
 export function AboutSection() {
+  const scrollToQuoteForm = () => {
+    const element = document.querySelector("#quote");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container-custom">
@@ -15,37 +28,39 @@ export function AboutSection() {
           <div className="relative animate-fade-up">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
-                alt="Professional cleaning team"
+                src={beforeAfterImage}
+                alt="Before and after artex removal transformation"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-2xl p-6 shadow-xl">
-              <div className="text-4xl font-heading font-bold">15+</div>
-              <div className="text-sm opacity-90">Years Experience</div>
-            </div>
-            {/* Decorative leaf */}
-            <div className="absolute -top-8 -left-8 animate-float">
-              <svg width="60" height="80" viewBox="0 0 60 80" className="text-primary/20">
-                <path
-                  fill="currentColor"
-                  d="M30 0C30 0 60 30 60 50C60 70 45 80 30 80C15 80 0 70 0 50C0 30 30 0 30 0Z"
-                />
-              </svg>
+            {/* Stats badges */}
+            <div className="absolute -bottom-6 left-6 right-6 bg-card rounded-2xl p-4 shadow-xl grid grid-cols-3 gap-4">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <stat.icon className="w-5 h-5 text-primary mx-auto mb-1" />
+                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Content side */}
           <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <span className="section-label">Who We Are</span>
+            <span className="section-label">About Us</span>
             <h2 className="section-title mt-4 mb-6">
-              We Are the Best Option for a Sparkling Home
+              UK's Trusted Artex Removal Specialists
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              At Clany Eco, our mission is to provide the most convenient platform
-              for connecting you with exceptional, professional cleaners who
-              deliver outstanding results.
+              Artex Removal Company has been transforming homes across the UK for over 
+              a decade. We specialise in the safe removal of textured artex coatings, 
+              providing smooth, modern ceiling finishes that add value to your property.
+            </p>
+
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Our team of certified professionals understand the importance of safety, 
+              especially when dealing with pre-1999 artex that may contain asbestos. 
+              Every project includes comprehensive testing and uses approved removal methods.
             </p>
 
             {/* Feature list */}
@@ -58,8 +73,8 @@ export function AboutSection() {
               ))}
             </ul>
 
-            <Button variant="hero" size="lg">
-              Learn More
+            <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
+              Get Free Quote
             </Button>
           </div>
         </div>

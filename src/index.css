@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,47 +6,48 @@
 
 @layer base {
   :root {
-    --background: 60 20% 99%;
-    --foreground: 150 10% 15%;
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 150 10% 15%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 10% 15%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 142 52% 36%;
+    --primary: 210 85% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 60 20% 96%;
-    --secondary-foreground: 150 10% 15%;
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 215 25% 15%;
 
-    --muted: 60 10% 94%;
-    --muted-foreground: 150 5% 45%;
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 10% 45%;
 
-    --accent: 48 96% 53%;
-    --accent-foreground: 150 10% 15%;
+    --accent: 35 95% 55%;
+    --accent-foreground: 215 25% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 60 10% 90%;
-    --input: 60 10% 90%;
-    --ring: 142 52% 36%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 210 85% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --eco-green: 142 52% 36%;
-    --eco-green-light: 142 45% 45%;
-    --eco-green-dark: 142 55% 28%;
-    --sunny-yellow: 48 96% 53%;
-    --sunny-yellow-light: 48 100% 65%;
-    --cream: 60 30% 97%;
-    --charcoal: 150 10% 15%;
+    /* Custom tokens for Artex Removal Company */
+    --artex-blue: 210 85% 45%;
+    --artex-blue-light: 210 75% 55%;
+    --artex-blue-dark: 215 85% 30%;
+    --artex-navy: 215 50% 20%;
+    --artex-orange: 35 95% 55%;
+    --artex-orange-light: 35 95% 65%;
+    --cream: 40 30% 97%;
+    --charcoal: 215 25% 15%;
 
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -59,33 +60,33 @@
   }
 
   .dark {
-    --background: 150 10% 8%;
-    --foreground: 60 20% 98%;
+    --background: 215 25% 8%;
+    --foreground: 210 20% 98%;
 
-    --card: 150 10% 10%;
-    --card-foreground: 60 20% 98%;
+    --card: 215 25% 10%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 150 10% 10%;
-    --popover-foreground: 60 20% 98%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 142 52% 45%;
+    --primary: 210 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 150 10% 15%;
-    --secondary-foreground: 60 20% 98%;
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 150 10% 18%;
-    --muted-foreground: 60 10% 65%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 48 96% 53%;
-    --accent-foreground: 150 10% 10%;
+    --accent: 35 95% 55%;
+    --accent-foreground: 215 25% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 10% 18%;
-    --input: 150 10% 18%;
-    --ring: 142 52% 45%;
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 210 85% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -122,7 +123,7 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-heading font-semibold text-foreground leading-tight;
+    @apply text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight;
   }
 
   .container-custom {
@@ -136,10 +137,14 @@
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--eco-green-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--artex-blue-light)) 100%);
   }
 
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--sunny-yellow-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--artex-orange-light)) 100%);
+  }
+
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--artex-navy)) 0%, hsl(var(--artex-blue-dark)) 100%);
   }
 }

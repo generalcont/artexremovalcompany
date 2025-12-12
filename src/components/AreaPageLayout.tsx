@@ -1,7 +1,7 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Button } from "@/components/ui/button";
-import { Check, Leaf, Phone } from "lucide-react";
+import { Check, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { serviceAreas, createSlug } from "@/data/serviceAreas";
 import { useMemo } from "react";
@@ -22,27 +22,27 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
       .slice(0, 10);
   }, [areaName]);
 
+  const scrollToQuoteForm = () => {
+    window.location.href = "/#quote";
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary/30">
+      <section className="pt-32 pb-16 gradient-navy">
         <div className="container-custom text-center">
-          <span className="section-label inline-flex items-center gap-2">
+          <span className="text-sm font-semibold uppercase tracking-widest text-primary inline-flex items-center gap-2">
             Service Areas
-            <Leaf className="w-4 h-4" />
+            <MapPin className="w-4 h-4" />
           </span>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4">
-            {areaName}
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-4">
+            Artex Removal in {areaName}
           </h1>
-          
-          {/* Decorative Leaves */}
-          <div className="flex justify-center gap-4 mt-8">
-            <Leaf className="w-12 h-12 text-primary animate-leaf-sway" style={{ animationDelay: "0s" }} />
-            <Leaf className="w-16 h-16 text-primary animate-leaf-sway" style={{ animationDelay: "0.2s" }} />
-            <Leaf className="w-12 h-12 text-primary animate-leaf-sway" style={{ animationDelay: "0.4s" }} />
-          </div>
+          <p className="text-primary-foreground/80 mt-4 max-w-2xl mx-auto">
+            Professional artex ceiling removal and smooth plastering services in {areaName} and surrounding areas.
+          </p>
         </div>
       </section>
 
@@ -56,10 +56,9 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
               <div className="mb-12">
                 <span className="section-label inline-flex items-center gap-2">
                   {areaName}
-                  <Leaf className="w-4 h-4" />
                 </span>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-4">
-                  The Ideal Cleaning Services in {areaName}
+                  Expert Artex Removal Services in {areaName}
                 </h2>
               </div>
 
@@ -71,7 +70,7 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
               {neighborhoods.length > 0 && (
                 <div className="border-t border-border pt-12">
                   <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
-                    Areas we Serve
+                    Areas We Cover
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {neighborhoods.map((neighborhood, index) => (
@@ -94,22 +93,12 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                       Ready to get started?
                     </h3>
                     <p className="text-muted-foreground mt-2">
-                      Get a free quote for your cleaning needs today.
+                      Get a free quote for your artex removal project in {areaName}.
                     </p>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link to="/free-quote">
-                      <Button variant="hero" size="lg">
-                        Get Free Quote
-                      </Button>
-                    </Link>
-                    <a href="tel:+11805678990">
-                      <Button variant="heroOutline" size="lg" className="gap-2">
-                        <Phone className="w-4 h-4" />
-                        Call Us
-                      </Button>
-                    </a>
-                  </div>
+                  <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
+                    Get Free Quote
+                  </Button>
                 </div>
               </div>
             </div>
@@ -129,7 +118,7 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                       className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/50 transition-colors group"
                     >
                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-                        <Leaf className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
+                        <MapPin className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
                       </div>
                       <span className="text-foreground font-medium group-hover:text-primary transition-colors">
                         {area.name}
@@ -147,18 +136,18 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
               {/* Contact Card */}
               <div className="bg-primary rounded-2xl p-6 mt-6 text-primary-foreground">
                 <h4 className="font-heading text-xl font-bold mb-4">
-                  Need Help?
+                  Get Your Free Quote
                 </h4>
                 <p className="opacity-90 mb-6">
-                  Our friendly team is here to help you with any questions about our cleaning services.
+                  Professional artex removal services in {areaName}. Contact us today for a free, no-obligation quote.
                 </p>
-                <a
-                  href="tel:+11805678990"
-                  className="flex items-center gap-3 bg-primary-foreground/20 rounded-lg p-4 hover:bg-primary-foreground/30 transition-colors"
+                <Button 
+                  variant="accent" 
+                  className="w-full"
+                  onClick={scrollToQuoteForm}
                 >
-                  <Phone className="w-5 h-5" />
-                  <span className="font-semibold">+1 (180) 567-8990</span>
-                </a>
+                  Request Quote
+                </Button>
               </div>
             </div>
           </div>
