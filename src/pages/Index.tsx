@@ -6,7 +6,6 @@ import { AboutSection } from "@/components/AboutSection";
 import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { QuoteFormSection } from "@/components/QuoteFormSection";
-import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -21,7 +20,6 @@ const Index = () => {
         <WhyChooseUsSection />
         <TestimonialsSection />
         <QuoteFormSection />
-        <CTASection />
       </main>
       <Footer />
     </div>

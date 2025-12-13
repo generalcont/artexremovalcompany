@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import artexService1 from "@/assets/artex-service-1.jpg";
@@ -11,53 +12,49 @@ import beforeAfterImage from "@/assets/artex-before-after.jpg";
 const services = [
   {
     title: "Artex Ceiling Removal",
-    description: "Complete removal of textured artex coatings from ceilings using safe, approved methods. We handle all types of artex patterns.",
+    description: "Removal of swirl, stipple, fan, and random-pattern artex from ceilings. We use scrapers and HEPA-filtered dust extraction to minimise airborne particles.",
     image: artexService1,
     href: "/services/artex-ceiling-removal",
-    features: ["All pattern types", "Safe removal", "Clean prep"],
+    features: ["All pattern types", "Dust extraction", "Same-day removal"],
   },
   {
     title: "Smooth Plastering",
-    description: "Professional skim coating and plastering to achieve a perfect smooth ceiling finish after artex removal.",
+    description: "Two-coat skim finish applied over prepared ceilings. We use Thistle Multi-Finish plaster, applied at 2-3mm thickness. Ready for painting in 24-48 hours.",
     image: artexService2,
     href: "/services/smooth-plastering",
-    features: ["Expert finish", "Ready to paint", "Long lasting"],
+    features: ["Multi-Finish plaster", "2-3mm skim", "Paint-ready"],
   },
   {
     title: "Asbestos Testing",
-    description: "Comprehensive asbestos testing for all pre-1999 artex coatings. Certified testing with fast results.",
+    description: "Samples sent to UKAS-accredited laboratories for analysis under polarised light microscopy. Results within 3-5 working days. Required for all pre-1999 artex.",
     image: artexService3,
     href: "/services/asbestos-testing",
-    features: ["Certified labs", "Fast results", "HSE compliant"],
+    features: ["UKAS labs", "3-5 day results", "HSE compliant"],
   },
   {
     title: "Wall Artex Removal",
-    description: "Expert removal of textured coatings from walls. Same professional service for your walls as our ceiling work.",
+    description: "Same removal process applied to textured wall coatings. Common in hallways and staircases of 1970s-1990s properties.",
     image: artexService1,
     href: "/services/wall-artex-removal",
-    features: ["Wall textures", "Smooth finish", "Full rooms"],
+    features: ["Wall textures", "Hallways", "Full rooms"],
   },
   {
     title: "Ceiling Repair",
-    description: "Professional repair of damaged ceilings, cracks, and imperfections. Restore your ceiling to perfect condition.",
+    description: "Repair of damaged plasterboard, cracks, and water-damaged areas. Includes filling, taping joints, and skimming to match surrounding surfaces.",
     image: artexService2,
     href: "/services/ceiling-repair",
-    features: ["Crack repairs", "Damage fixing", "Restoration"],
+    features: ["Crack filling", "Board replacement", "Skim finish"],
   },
   {
     title: "Textured Coating Removal",
-    description: "Removal of all types of textured coatings including woodchip, popcorn, and stipple finishes.",
+    description: "Removal of woodchip, popcorn, and other textured finishes. These coatings are typically asbestos-free but we test to confirm.",
     image: artexService3,
     href: "/services/textured-coating-removal",
-    features: ["Woodchip", "Popcorn", "Stipple"],
+    features: ["Woodchip", "Popcorn ceiling", "Stipple"],
   },
 ];
 
 const Services = () => {
-  const scrollToQuoteForm = () => {
-    window.location.href = "/#quote";
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -67,15 +64,15 @@ const Services = () => {
         <div className="container-custom py-16 lg:py-24">
           <div className="max-w-3xl mx-auto text-center animate-fade-up">
             <span className="text-sm font-semibold uppercase tracking-widest text-primary flex items-center justify-center gap-2">
-              Our Services
+              Services
               <Shield className="w-4 h-4" />
             </span>
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mt-4 mb-6">
-              Professional Artex Removal Services
+              Artex Removal & Plastering Services
             </h1>
             <p className="text-lg text-primary-foreground/80">
-              Complete artex removal and ceiling renovation services across the UK. 
-              From testing to finishing, we handle everything.
+              We remove artex coatings from ceilings and walls, then apply smooth plaster finishes. 
+              All work includes asbestos testing for properties built before 1999.
             </p>
           </div>
         </div>
@@ -115,7 +112,7 @@ const Services = () => {
                       ))}
                     </div>
                     <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                      Learn More
+                      View Details
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -131,14 +128,15 @@ const Services = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-up">
-              <span className="section-label">Results</span>
-              <h2 className="section-title mt-4 mb-6">See the Transformation</h2>
+              <span className="section-label">Case Study</span>
+              <h2 className="section-title mt-4 mb-6">Living Room Transformation</h2>
               <p className="text-muted-foreground text-lg mb-6">
-                Our expert team transforms dated, textured artex ceilings into beautiful, 
-                smooth modern finishes. See the difference our professional service makes.
+                This 1976 semi-detached in Bristol had swirl-pattern artex throughout the ground floor. 
+                We tested for asbestos (negative), removed all textured coatings, and applied a 
+                smooth skim finish. The living room and dining room took two days in total.
               </p>
               <ul className="space-y-3 mb-8">
-                {["Complete dust containment", "Asbestos safe procedures", "Ready for decoration"].map((item) => (
+                {["Asbestos test: Negative", "Removal: 1 day", "Plastering: 1 day"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-primary-foreground" />
@@ -147,14 +145,11 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
-                Get Your Free Quote
-              </Button>
             </div>
             <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <img
                 src={beforeAfterImage}
-                alt="Before and after artex removal"
+                alt="Before and after: textured artex ceiling transformed to smooth plaster in Bristol living room"
                 className="w-full rounded-2xl shadow-xl"
               />
             </div>
@@ -162,21 +157,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary">
-        <div className="container-custom text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Transform Your Ceilings?
-          </h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-            Get your free, no-obligation quote today and discover how we can modernise your home.
-          </p>
-          <Button variant="accent" size="lg" onClick={scrollToQuoteForm}>
-            Get Free Quote
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-        </div>
-      </section>
+      <QuoteFormSection />
 
       <Footer />
     </div>

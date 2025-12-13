@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { ChevronRight, Check, Shield } from "lucide-react";
 
 interface ServicePageLayoutProps {
@@ -33,7 +34,8 @@ export function ServicePageLayout({
   productsDescription,
 }: ServicePageLayoutProps) {
   const scrollToQuoteForm = () => {
-    window.location.href = "/#quote";
+    const element = document.querySelector("#quote");
+    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -53,7 +55,7 @@ export function ServicePageLayout({
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mt-4 mb-6">{title}</h1>
               <p className="text-lg text-primary-foreground/80 mb-8">{subtitle}</p>
               <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
-                Get Free Quote
+                Request a Quote
               </Button>
             </div>
 
@@ -99,9 +101,6 @@ export function ServicePageLayout({
                 <h3 className="text-2xl font-heading font-bold text-primary-foreground text-center mb-8">
                   What's Included
                 </h3>
-                <p className="text-primary-foreground/80 text-center mb-8">
-                  Our comprehensive {title.toLowerCase()} service includes:
-                </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   {taskList.map((task, index) => (
                     <div key={index} className="flex items-center gap-3 text-primary-foreground">
@@ -112,16 +111,19 @@ export function ServicePageLayout({
                 </div>
               </div>
 
-              {/* Why Choose Us */}
+              {/* Technical Details */}
               <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-                  Why Choose Artex Removal Company?
+                  Our Approach
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  With over 10 years of experience in artex removal and ceiling renovation, we've built a reputation for excellence across the UK. Our team of certified professionals uses the latest techniques and equipment to deliver outstanding results every time.
+                  Every project starts with a site visit to assess the ceiling condition and take measurements. 
+                  For properties built before 1999, we take samples for asbestos testing before providing a fixed quote.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Safety is our top priority. All our work is fully insured, and we hold all necessary certifications for asbestos awareness and safe removal. We provide complete dust containment to protect your home and ensure minimal disruption to your daily life.
+                  We use polythene sheeting to seal the work area and HEPA-filtered dust extractors during removal. 
+                  All waste is bagged and removed from site. We hold £5 million public liability insurance and 
+                  our team is UKATA asbestos awareness certified.
                 </p>
               </div>
             </div>
@@ -131,7 +133,7 @@ export function ServicePageLayout({
               {/* Services List */}
               <div className="bg-foreground rounded-2xl p-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
                 <h4 className="text-xl font-heading font-bold text-background mb-6">
-                  Our Services
+                  Other Services
                 </h4>
                 <div className="space-y-3">
                   {services.map((service) => (
@@ -151,14 +153,11 @@ export function ServicePageLayout({
 
               {/* Contact CTA */}
               <div className="bg-accent rounded-2xl p-6 text-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
-                <p className="text-foreground font-medium mb-2">
-                  Ready to transform your ceilings?
-                </p>
                 <p className="text-foreground font-heading text-xl font-bold mb-4">
-                  Get your free quote today!
+                  Need a quote?
                 </p>
                 <Button variant="hero" className="w-full" onClick={scrollToQuoteForm}>
-                  Request Quote
+                  Contact Us
                 </Button>
               </div>
 
@@ -168,11 +167,11 @@ export function ServicePageLayout({
                   <Shield className="w-10 h-10 text-primary" />
                   <div>
                     <p className="font-bold text-foreground">Fully Insured</p>
-                    <p className="text-sm text-muted-foreground">Complete peace of mind</p>
+                    <p className="text-sm text-muted-foreground">£5m public liability</p>
                   </div>
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  All work is fully insured with public liability coverage up to £5 million.
+                  All work is covered by comprehensive public liability insurance.
                 </p>
               </div>
             </div>
@@ -180,22 +179,7 @@ export function ServicePageLayout({
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-primary">
-        <div className="container-custom text-center">
-          <div className="max-w-2xl mx-auto animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-primary-foreground/80 mb-8">
-              Get your free, no-obligation quote today. We'll respond within 24 hours.
-            </p>
-            <Button variant="accent" size="lg" onClick={scrollToQuoteForm}>
-              Get Free Quote
-            </Button>
-          </div>
-        </div>
-      </section>
+      <QuoteFormSection />
 
       <Footer />
     </div>

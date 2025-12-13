@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Star, Shield, Award } from "lucide-react";
 import heroImage from "@/assets/artex-hero.jpg";
 
-const features = ["Professional", "Certified", "Insured"];
+const features = ["Asbestos Testing", "Dust Containment", "Smooth Finish"];
 
 export function HeroSection() {
   const scrollToQuoteForm = () => {
@@ -21,7 +21,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Professional artex ceiling removal service"
+          alt="Plasterer applying smooth finish to ceiling after artex removal"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
@@ -44,31 +44,30 @@ export function HeroSection() {
             <div className="flex items-center gap-4 mb-6">
               <div className="flex items-center gap-2 bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary-foreground">Fully Insured</span>
+                <span className="text-sm font-medium text-primary-foreground">£5m Public Liability</span>
               </div>
               <div className="flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Award className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-primary-foreground">Certified Specialists</span>
+                <span className="text-sm font-medium text-primary-foreground">UKATA Certified</span>
               </div>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
-              Professional{" "}
-              <span className="text-primary">Artex Removal</span>{" "}
-              & Ceiling Services
+              Artex Ceiling Removal{" "}
+              <span className="text-primary">Done Right</span>
             </h1>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
-              Transform your dated textured ceilings into smooth, modern finishes. 
-              UK's trusted specialists for safe artex removal with asbestos testing included.
+              We remove textured artex coatings and replace them with smooth plastered ceilings. 
+              All pre-1999 artex is tested for asbestos before work begins.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
               <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
-                Get Free Quote
+                Request a Quote
               </Button>
               <Button variant="heroOutline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground" onClick={scrollToServices}>
-                Our Services
+                View Services
               </Button>
             </div>
 
@@ -95,16 +94,8 @@ export function HeroSection() {
               <span className="text-2xl font-bold text-foreground">4.9</span>
             </div>
             <div className="text-left">
-              <p className="text-xs text-muted-foreground">Google</p>
-              <p className="text-sm font-semibold text-foreground">500+ Reviews</p>
-            </div>
-            <div className="flex -space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card"
-                />
-              ))}
+              <p className="text-xs text-muted-foreground">Google Reviews</p>
+              <p className="text-sm font-semibold text-foreground">500+ Verified Reviews</p>
             </div>
           </div>
         </div>

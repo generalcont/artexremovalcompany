@@ -4,13 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Send, Shield, Clock, Award } from "lucide-react";
+import { Send, Shield, Clock, Award } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const benefits = [
-  { icon: Shield, text: "Free no-obligation quote" },
+  { icon: Shield, text: "No-obligation quote" },
   { icon: Clock, text: "Response within 24 hours" },
-  { icon: Award, text: "Competitive pricing" },
+  { icon: Award, text: "Fixed pricing — no hidden fees" },
 ];
 
 export function QuoteFormSection() {
@@ -32,8 +32,8 @@ export function QuoteFormSection() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Quote Request Received!",
-      description: "We'll get back to you within 24 hours with your free quote.",
+      title: "Quote Request Received",
+      description: "We'll get back to you within 24 hours.",
     });
 
     setFormData({
@@ -59,14 +59,14 @@ export function QuoteFormSection() {
           {/* Left Content */}
           <div className="text-primary-foreground">
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Get Started
+              Contact Us
             </span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold mt-4 mb-6">
-              Request Your Free Quote Today
+              Request a Quote
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-10">
-              Fill out the form and our team will provide you with a detailed, 
-              no-obligation quote for your artex removal project.
+              Tell us about your project. Include the number of rooms, approximate 
+              ceiling sizes, and when the property was built if you know.
             </p>
 
             {/* Benefits */}
@@ -85,7 +85,7 @@ export function QuoteFormSection() {
           {/* Quote Form */}
           <div className="bg-card rounded-3xl p-8 md:p-10 shadow-2xl">
             <h3 className="text-2xl font-heading font-bold text-foreground mb-6">
-              Get Your Free Quote
+              Your Details
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -125,7 +125,7 @@ export function QuoteFormSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="serviceType">Service Type *</Label>
+                  <Label htmlFor="serviceType">Service Required *</Label>
                   <Select
                     value={formData.serviceType}
                     onValueChange={(value) => setFormData({ ...formData, serviceType: value })}
@@ -137,8 +137,8 @@ export function QuoteFormSection() {
                     <SelectContent>
                       <SelectItem value="artex-removal">Artex Removal</SelectItem>
                       <SelectItem value="plastering">Smooth Plastering</SelectItem>
-                      <SelectItem value="asbestos-testing">Asbestos Testing</SelectItem>
-                      <SelectItem value="full-service">Full Service (All)</SelectItem>
+                      <SelectItem value="asbestos-testing">Asbestos Testing Only</SelectItem>
+                      <SelectItem value="full-service">Removal + Plastering</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -148,7 +148,7 @@ export function QuoteFormSection() {
                 <Label htmlFor="message">Project Details</Label>
                 <Textarea
                   id="message"
-                  placeholder="Tell us about your project (room size, number of rooms, any specific requirements...)"
+                  placeholder="Number of rooms, ceiling sizes (approx), year property was built, any access issues..."
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -166,14 +166,14 @@ export function QuoteFormSection() {
                   "Sending..."
                 ) : (
                   <>
-                    Request Free Quote
+                    Send Request
                     <Send className="w-4 h-4 ml-2" />
                   </>
                 )}
               </Button>
 
               <p className="text-sm text-muted-foreground text-center">
-                By submitting, you agree to our privacy policy. We never share your data.
+                We'll respond within 24 hours. Your details are never shared with third parties.
               </p>
             </form>
           </div>

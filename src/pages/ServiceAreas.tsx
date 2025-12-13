@@ -1,7 +1,8 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { Button } from "@/components/ui/button";
-import { Leaf, MapPin, Search } from "lucide-react";
+import { MapPin, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { serviceAreas, getAreasGroupedByRegion } from "@/data/serviceAreas";
@@ -40,15 +41,15 @@ export default function ServiceAreas() {
       <section className="pt-32 pb-16 bg-secondary/30">
         <div className="container-custom text-center">
           <span className="section-label inline-flex items-center gap-2">
-            Our Locations
-            <Leaf className="w-4 h-4" />
+            Coverage
+            <MapPin className="w-4 h-4" />
           </span>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4">
             Service Areas
           </h1>
           <p className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto">
-            We provide professional eco-friendly cleaning services across the UK and Ireland. 
-            Find your area below.
+            We provide artex removal and plastering services across the UK. 
+            Find your area below or search by town or postcode.
           </p>
         </div>
       </section>
@@ -149,20 +150,10 @@ export default function ServiceAreas() {
               <p className="text-muted-foreground">No areas found matching your search.</p>
             </div>
           )}
-
-          {/* CTA */}
-          <div className="text-center mt-16">
-            <p className="text-muted-foreground mb-4">
-              Don't see your area? Contact us to check availability.
-            </p>
-            <Link to="/free-quote">
-              <Button variant="hero" size="lg">
-                Get a Free Quote
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
+
+      <QuoteFormSection />
 
       <Footer />
     </div>

@@ -3,30 +3,30 @@ import artexService1 from "@/assets/artex-service-1.jpg";
 
 const ArtexCeilingRemoval = () => {
   const taskList = [
-    "Full room assessment",
-    "Dust containment setup",
-    "Asbestos testing (if needed)",
-    "Safe artex removal",
+    "Initial ceiling assessment",
+    "Asbestos sampling (pre-1999 properties)",
+    "Full room dust containment",
+    "Mechanical artex removal",
+    "HEPA dust extraction",
     "Surface preparation",
-    "Debris disposal",
-    "Area cleaning",
-    "Quality inspection",
+    "Waste bagging and disposal",
+    "Final clean-up",
   ];
 
   const productsDescription = [
-    "Our artex ceiling removal service is the comprehensive solution for homeowners looking to modernise their dated textured ceilings. We use professional-grade equipment and proven techniques to safely remove all types of artex patterns including swirl, stipple, fan, and random textures.",
-    "Every project begins with a thorough assessment of your ceiling to determine the best removal approach. For properties built before 1999, we conduct asbestos testing to ensure complete safety. Our fully trained team then sets up complete dust containment to protect your home.",
-    "The removal process is carried out efficiently with minimal disruption. We take care of all debris disposal and leave your ceiling ready for plastering. Most single rooms can be completed in just one day.",
+    "We remove all types of textured artex coatings from ceilings — swirl, stipple, fan, and random patterns. The process involves scraping the coating from the plasterboard or lath-and-plaster substrate, then preparing the surface for a smooth skim finish.",
+    "For properties built before 1999, we take samples and send them to a UKAS-accredited laboratory for asbestos analysis. Results take 3-5 working days. If asbestos is detected, we use licensed removal methods that comply with HSE regulations.",
+    "During removal, we seal the room with polythene sheeting and use HEPA-filtered dust extractors to capture airborne particles. All waste is double-bagged and removed from site. Most single rooms are completed within one working day.",
   ];
 
   return (
     <ServicePageLayout
       title="Artex Ceiling Removal"
-      subtitle="Transform your dated textured ceilings with our professional artex removal service. Safe, efficient, and thorough."
+      subtitle="We remove textured artex coatings from ceilings using dust-controlled methods. All pre-1999 artex is tested for asbestos before work begins."
       heroImage={artexService1}
       description="Complete Artex Ceiling Removal Service"
       taskList={taskList}
-      productsTitle="Complete Artex Ceiling Removal Service"
+      productsTitle="How We Remove Artex Ceilings"
       productsDescription={productsDescription}
     />
   );

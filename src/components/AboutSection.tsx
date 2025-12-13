@@ -3,14 +3,14 @@ import { CheckCircle, Award, Users, Clock } from "lucide-react";
 import beforeAfterImage from "@/assets/artex-before-after.jpg";
 
 const features = [
-  "Fully trained and certified specialists",
-  "Complete asbestos testing included",
-  "Minimal disruption to your home",
+  "UKATA asbestos awareness certified team",
+  "Complete dust containment on every job",
+  "We test all pre-1999 artex before removal",
 ];
 
 const stats = [
   { icon: Award, value: "10+", label: "Years Experience" },
-  { icon: Users, value: "500+", label: "Happy Customers" },
+  { icon: Users, value: "500+", label: "Completed Projects" },
   { icon: Clock, value: "24h", label: "Quote Response" },
 ];
 
@@ -29,7 +29,7 @@ export function AboutSection() {
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src={beforeAfterImage}
-                alt="Before and after artex removal transformation"
+                alt="Before and after comparison showing textured artex ceiling transformed to smooth plaster finish"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -49,18 +49,20 @@ export function AboutSection() {
           <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <span className="section-label">About Us</span>
             <h2 className="section-title mt-4 mb-6">
-              UK's Trusted Artex Removal Specialists
+              Why Artex Needs Professional Removal
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Artex Removal Company has been transforming homes across the UK for over 
-              a decade. We specialise in the safe removal of textured artex coatings, 
-              providing smooth, modern ceiling finishes that add value to your property.
+              Artex and textured coatings applied before 1999 often contain chrysotile asbestos. 
+              Disturbing these materials without proper testing and containment can release 
+              harmful fibres into your home. Our team holds UKATA certification and follows 
+              HSE guidelines on every project.
             </p>
 
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Our team of certified professionals understand the importance of safety, 
-              especially when dealing with pre-1999 artex that may contain asbestos. 
-              Every project includes comprehensive testing and uses approved removal methods.
+              We start by taking samples for laboratory analysis. If asbestos is found, we use 
+              licensed removal methods. If the coating is asbestos-free, we proceed with 
+              mechanical removal and full dust extraction. The result is a smooth, paint-ready 
+              ceiling that adds value to your property.
             </p>
 
             {/* Feature list */}
@@ -74,7 +76,7 @@ export function AboutSection() {
             </ul>
 
             <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
-              Get Free Quote
+              Request a Quote
             </Button>
           </div>
         </div>

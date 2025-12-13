@@ -3,20 +3,20 @@ import { FileText, Wrench, CheckCircle } from "lucide-react";
 const steps = [
   {
     icon: FileText,
-    title: "Get Your Quote",
-    description: "Fill in our quick form with your project details. We'll respond within 24 hours with a competitive quote.",
+    title: "1. Quote & Testing",
+    description: "Fill in the form below with your room details. If your property was built before 1999, we'll arrange asbestos sampling before providing a fixed quote.",
     color: "bg-primary",
   },
   {
     icon: Wrench,
-    title: "Professional Removal",
-    description: "Our certified team safely removes all artex, with dust containment and asbestos testing if required.",
+    title: "2. Removal Day",
+    description: "We seal the room with polythene sheeting, remove the artex using scrapers and dust extractors, then bag and dispose of all waste.",
     color: "bg-artex-navy",
   },
   {
     icon: CheckCircle,
-    title: "Smooth Finish",
-    description: "We apply a flawless smooth plaster finish, ready for you to paint and enjoy your transformed ceiling.",
+    title: "3. Plastering",
+    description: "We apply a smooth plaster skim coat, typically 2-3mm thick. After 24-48 hours of drying, your ceiling is ready for primer and paint.",
     color: "bg-accent",
   },
 ];
@@ -28,10 +28,9 @@ export function HowItWorksSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="section-label">How It Works</span>
-          <h2 className="section-title mt-4">Simple 3-Step Process</h2>
+          <h2 className="section-title mt-4">Our Process Step by Step</h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            From initial quote to beautiful smooth ceilings, we make the process 
-            simple and stress-free.
+            Here's exactly what happens when you book us for an artex removal project.
           </p>
         </div>
 
@@ -49,10 +48,6 @@ export function HowItWorksSection() {
                   className={`w-20 h-20 rounded-2xl ${step.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}
                 >
                   <step.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                {/* Step number */}
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-card border-2 border-primary flex items-center justify-center shadow">
-                  <span className="text-sm font-bold text-primary">{index + 1}</span>
                 </div>
               </div>
 

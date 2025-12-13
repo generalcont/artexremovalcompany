@@ -1,4 +1,4 @@
-import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/logo-icon.png";
 
@@ -44,17 +44,17 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-background/70 mb-6 max-w-sm">
-              UK's leading artex removal specialists. Professional textured ceiling 
-              removal and smooth plastering services since 2014.
+              Specialists in artex and textured ceiling removal across the UK. 
+              We safely remove artex coatings and apply smooth plaster finishes.
             </p>
             {/* Contact info */}
             <div className="space-y-3">
               <a
-                href="mailto:info@artexremovalcompany.co.uk"
+                href="mailto:contact@artexremovalcompany.co.uk"
                 className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>info@artexremovalcompany.co.uk</span>
+                <span>contact@artexremovalcompany.co.uk</span>
               </a>
               <div className="flex items-center gap-3 text-background/70">
                 <MapPin className="w-4 h-4" />
@@ -120,29 +120,6 @@ export function Footer() {
           <p className="text-background/50 text-sm">
             © {new Date().getFullYear()} Artex Removal Company. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
