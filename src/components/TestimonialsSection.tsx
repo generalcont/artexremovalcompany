@@ -2,62 +2,61 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
+    name: "Sarah M.",
     location: "London",
     rating: 5,
-    text: "Absolutely brilliant service! The team removed all the artex from our living room ceiling and left it perfectly smooth. Very professional and tidy work.",
-    date: "2 weeks ago",
+    text: "Had swirl artex removed from our 1970s semi. The team tested for asbestos first (came back clear), then finished the entire lounge ceiling in one day. The plasterer did a proper skim — no patching, no shortcuts.",
+    date: "November 2024",
   },
   {
-    name: "James Thompson",
+    name: "James T.",
     location: "Manchester",
     rating: 5,
-    text: "We were worried about asbestos in our 1970s ceiling but they handled everything professionally. Testing came back clear and the removal was done in one day!",
-    date: "1 month ago",
+    text: "Our house was built in 1978 so asbestos was a real concern. They took samples from three rooms, sent them to a lab, and gave us the all-clear within a week. Removal and plastering followed shortly after. Very straightforward process.",
+    date: "October 2024",
   },
   {
-    name: "Emma Williams",
+    name: "Emma W.",
     location: "Birmingham",
     rating: 5,
-    text: "Transformed our entire house - 4 rooms done in 3 days. The smooth finish is incredible. Worth every penny and the price was very competitive.",
-    date: "3 weeks ago",
+    text: "We had four rooms done over three days — living room, dining room, and two bedrooms. The dust containment actually worked; our furniture was covered but didn't need cleaning afterwards. Fair price for the quality.",
+    date: "November 2024",
   },
   {
-    name: "David Chen",
+    name: "David C.",
     location: "Bristol",
     rating: 5,
-    text: "From quote to completion, the process was seamless. Great communication throughout and the end result exceeded our expectations. Highly recommend!",
-    date: "1 week ago",
+    text: "I'd tried to scrape off the artex myself and made a mess of it. These guys came in, sorted the damage I'd caused, removed the rest properly, and skimmed the lot. Should have called them first.",
+    date: "September 2024",
   },
   {
-    name: "Rachel Green",
+    name: "Rachel G.",
     location: "Leeds",
     rating: 5,
-    text: "The before and after is unbelievable! Our dated cottage ceilings now look like a modern new build. Professional team who really know their craft.",
-    date: "2 months ago",
+    text: "Cottage ceilings with that old stipple finish. After removal and plastering, it looks like a completely different house. The plasterer took his time to get the finish right — no rushing.",
+    date: "October 2024",
   },
   {
-    name: "Michael Brown",
+    name: "Michael B.",
     location: "Glasgow",
     rating: 5,
-    text: "Had artex removed from bedroom ceilings. Clean, efficient work with excellent dust containment. The smooth plastering finish is flawless.",
-    date: "3 weeks ago",
+    text: "Bedroom ceilings in a 1985 build. They tested for asbestos (negative), set up sheeting everywhere, and removed the lot. The HEPA vacuum they used kept the dust under control. Good clean work.",
+    date: "August 2024",
   },
 ];
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 bg-background">
+    <section id="testimonials" className="py-24 bg-background">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="section-label">Testimonials</span>
+          <span className="section-label">Reviews</span>
           <h2 className="section-title mt-4">
-            What Our Customers Say
+            What Customers Say
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from hundreds of satisfied customers 
-            who have transformed their homes with our artex removal services.
+            Recent feedback from homeowners who've used our artex removal service.
           </p>
         </div>
 
@@ -103,17 +102,17 @@ export function TestimonialsSection() {
           <div className="inline-flex items-center gap-8 bg-secondary rounded-2xl px-8 py-6">
             <div className="text-center">
               <p className="text-3xl font-bold text-foreground">4.9</p>
-              <p className="text-sm text-muted-foreground">Average Rating</p>
+              <p className="text-sm text-muted-foreground">Google Rating</p>
             </div>
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
               <p className="text-3xl font-bold text-foreground">500+</p>
-              <p className="text-sm text-muted-foreground">Happy Customers</p>
+              <p className="text-sm text-muted-foreground">Projects Completed</p>
             </div>
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
               <p className="text-3xl font-bold text-foreground">10+</p>
-              <p className="text-sm text-muted-foreground">Years Experience</p>
+              <p className="text-sm text-muted-foreground">Years Trading</p>
             </div>
           </div>
         </div>

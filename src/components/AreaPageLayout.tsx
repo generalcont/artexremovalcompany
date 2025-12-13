@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { QuoteFormSection } from "./QuoteFormSection";
 import { Button } from "@/components/ui/button";
 import { Check, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -23,7 +24,8 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
   }, [areaName]);
 
   const scrollToQuoteForm = () => {
-    window.location.href = "/#quote";
+    const element = document.querySelector("#quote");
+    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -34,14 +36,14 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
       <section className="pt-32 pb-16 gradient-navy">
         <div className="container-custom text-center">
           <span className="text-sm font-semibold uppercase tracking-widest text-primary inline-flex items-center gap-2">
-            Service Areas
+            Service Area
             <MapPin className="w-4 h-4" />
           </span>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-4">
             Artex Removal in {areaName}
           </h1>
           <p className="text-primary-foreground/80 mt-4 max-w-2xl mx-auto">
-            Professional artex ceiling removal and smooth plastering services in {areaName} and surrounding areas.
+            Artex and textured ceiling removal services in {areaName} and surrounding areas.
           </p>
         </div>
       </section>
@@ -54,11 +56,8 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
             <div className="lg:col-span-2">
               {/* Title Section */}
               <div className="mb-12">
-                <span className="section-label inline-flex items-center gap-2">
-                  {areaName}
-                </span>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-4">
-                  Expert Artex Removal Services in {areaName}
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+                  Artex Removal Services in {areaName}
                 </h2>
               </div>
 
@@ -84,23 +83,6 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                   </div>
                 </div>
               )}
-
-              {/* CTA Section */}
-              <div className="mt-16 bg-accent rounded-2xl p-8 md:p-12">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div>
-                    <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-                      Ready to get started?
-                    </h3>
-                    <p className="text-muted-foreground mt-2">
-                      Get a free quote for your artex removal project in {areaName}.
-                    </p>
-                  </div>
-                  <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
-                    Get Free Quote
-                  </Button>
-                </div>
-              </div>
             </div>
 
             {/* Sidebar */}
@@ -136,23 +118,25 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
               {/* Contact Card */}
               <div className="bg-primary rounded-2xl p-6 mt-6 text-primary-foreground">
                 <h4 className="font-heading text-xl font-bold mb-4">
-                  Get Your Free Quote
+                  Request a Quote
                 </h4>
                 <p className="opacity-90 mb-6">
-                  Professional artex removal services in {areaName}. Contact us today for a free, no-obligation quote.
+                  We cover {areaName} and the surrounding areas. Fill in the form below for a no-obligation quote.
                 </p>
                 <Button 
                   variant="accent" 
                   className="w-full"
                   onClick={scrollToQuoteForm}
                 >
-                  Request Quote
+                  Get Quote
                 </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <QuoteFormSection />
 
       <Footer />
     </div>

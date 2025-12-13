@@ -3,33 +3,33 @@ import { Shield, Wrench, Clock, Award, CheckCircle, Users } from "lucide-react";
 const reasons = [
   {
     icon: Shield,
-    title: "Fully Insured & Certified",
-    description: "All work is fully insured with certified asbestos awareness training.",
+    title: "£5m Public Liability Insurance",
+    description: "All work is covered by comprehensive insurance, giving you complete peace of mind.",
   },
   {
     icon: Wrench,
-    title: "Professional Equipment",
-    description: "We use industry-leading tools and dust containment systems.",
+    title: "HEPA Dust Extraction",
+    description: "We use industrial vacuum systems with HEPA filters to capture fine particles during removal.",
   },
   {
     icon: Clock,
-    title: "Fast Turnaround",
-    description: "Most rooms completed in just one day with minimal disruption.",
+    title: "Single Room in One Day",
+    description: "Most bedrooms and living rooms are fully removed and ready for plastering within 8 hours.",
   },
   {
     icon: Award,
-    title: "Quality Guaranteed",
-    description: "Every project finished to the highest standards with warranty included.",
+    title: "UKATA Asbestos Certified",
+    description: "Our team holds UKATA asbestos awareness certification, renewed annually.",
   },
   {
     icon: CheckCircle,
-    title: "Asbestos Testing Included",
-    description: "Free asbestos testing for all pre-1999 artex before removal begins.",
+    title: "UKAS Laboratory Testing",
+    description: "Samples are analysed by accredited labs following HSG 248 guidelines.",
   },
   {
     icon: Users,
-    title: "Experienced Team",
-    description: "Over 10 years experience with 500+ successful projects completed.",
+    title: "Direct Employment",
+    description: "We employ our plasterers directly — no subcontractors, consistent quality.",
   },
 ];
 
@@ -41,11 +41,10 @@ export function WhyChooseUsSection() {
         <div className="text-center mb-16">
           <span className="section-label">Why Choose Us</span>
           <h2 className="section-title mt-4">
-            The Artex Removal Experts You Can Trust
+            Our Credentials
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            We're not just another decorating company - we're specialists dedicated 
-            to safe, professional artex removal.
+            These are the standards and certifications that define how we work.
           </p>
         </div>
 

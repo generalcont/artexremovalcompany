@@ -9,19 +9,19 @@ import beforeAfterImage from "@/assets/artex-before-after.jpg";
 const services = [
   {
     title: "Artex Ceiling Removal",
-    description: "Complete removal of textured artex coatings from ceilings. We safely remove all types of artex patterns leaving a smooth surface ready for decoration.",
+    description: "We remove swirl, stipple, and fan-pattern artex from ceilings using dust-controlled methods. Suitable for living rooms, bedrooms, and hallways.",
     image: artexService1,
-    link: "/services/artex-removal",
+    link: "/services/artex-ceiling-removal",
   },
   {
     title: "Smooth Plastering",
-    description: "Professional skim coating and plastering services to achieve a perfect smooth ceiling finish after artex removal.",
+    description: "After removal, we apply a 2-3mm skim coat of multi-finish plaster. The surface is ready for painting within 48 hours of drying.",
     image: artexService2,
-    link: "/services/plastering",
+    link: "/services/smooth-plastering",
   },
   {
     title: "Asbestos Testing",
-    description: "Comprehensive asbestos testing for pre-1999 artex coatings. Certified testing to ensure safe removal procedures.",
+    description: "We send samples to a UKAS-accredited laboratory. Results typically arrive within 3-5 working days. Testing is required for all pre-1999 artex.",
     image: artexService3,
     link: "/services/asbestos-testing",
   },
@@ -40,11 +40,11 @@ export function ServicesSection() {
         <div className="text-center mb-16">
           <span className="section-label">Our Services</span>
           <h2 className="section-title mt-4">
-            Professional Artex Removal Services
+            What We Do
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            From initial assessment to final finish, we provide complete artex removal 
-            and ceiling renovation services across the UK.
+            From initial testing through to final decoration, we handle every stage 
+            of the artex removal process.
           </p>
         </div>
 
@@ -73,10 +73,10 @@ export function ServicesSection() {
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {service.description}
                 </p>
-                <Button variant="link" className="p-0 h-auto text-primary font-semibold group/btn" onClick={scrollToQuoteForm}>
-                  Get Quote
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={service.link} className="inline-flex items-center gap-1 text-primary font-semibold group/btn">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           ))}
@@ -86,17 +86,17 @@ export function ServicesSection() {
         <div className="bg-card rounded-3xl p-8 md:p-12 shadow-lg">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="section-label">Transformation</span>
+              <span className="section-label">Results</span>
               <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-4 mb-6">
-                See the Difference
+                From Textured to Smooth
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Our expert team transforms dated, textured artex ceilings into beautiful, 
-                smooth modern finishes. Every project is completed to the highest standards 
-                with minimal disruption to your home.
+                This living room ceiling in Bristol had stipple-pattern artex applied in 1985. 
+                We tested for asbestos (negative), removed the coating, and applied a smooth 
+                skim finish. The entire job took two days.
               </p>
               <ul className="space-y-3 mb-8">
-                {["Complete dust containment", "Asbestos safe procedures", "Ready for decoration"].map((item) => (
+                {["Asbestos test: Negative", "Removal time: 1 day", "Plastering: 1 day"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                       <ArrowRight className="w-3 h-3 text-primary-foreground" />
@@ -106,13 +106,13 @@ export function ServicesSection() {
                 ))}
               </ul>
               <Button variant="hero" size="lg" onClick={scrollToQuoteForm}>
-                Get Your Free Quote
+                Request a Quote
               </Button>
             </div>
             <div className="relative">
               <img
                 src={beforeAfterImage}
-                alt="Before and after artex removal comparison"
+                alt="Before and after comparison of artex ceiling removal in a Bristol living room"
                 className="w-full rounded-2xl shadow-xl"
               />
             </div>
