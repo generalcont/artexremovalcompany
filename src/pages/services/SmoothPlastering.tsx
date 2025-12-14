@@ -29,6 +29,11 @@ const SmoothPlastering = () => {
       taskList={taskList}
       productsTitle="Why Professional Plastering Matters"
       productsDescription={productsDescription}
+      relatedServices={[
+        { name: "Artex Ceiling Removal", href: "/services/artex-ceiling-removal" },
+        { name: "Ceiling Repair", href: "/services/ceiling-repair" },
+        { name: "Wall Artex Removal", href: "/services/wall-artex-removal" },
+      ]}
     />
   );
 };

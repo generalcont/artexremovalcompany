@@ -29,6 +29,11 @@ const CeilingRepair = () => {
       taskList={taskList}
       productsTitle="When Repair Is The Right Choice"
       productsDescription={productsDescription}
+      relatedServices={[
+        { name: "Artex Ceiling Removal", href: "/services/artex-ceiling-removal" },
+        { name: "Smooth Plastering", href: "/services/smooth-plastering" },
+        { name: "Textured Coating Removal", href: "/services/textured-coating-removal" },
+      ]}
     />
   );
 };

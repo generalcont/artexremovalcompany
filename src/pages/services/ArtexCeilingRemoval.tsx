@@ -28,6 +28,11 @@ const ArtexCeilingRemoval = () => {
       taskList={taskList}
       productsTitle="How We Remove Artex Ceilings"
       productsDescription={productsDescription}
+      relatedServices={[
+        { name: "Smooth Plastering", href: "/services/smooth-plastering" },
+        { name: "Asbestos Testing", href: "/services/asbestos-testing" },
+        { name: "Wall Artex Removal", href: "/services/wall-artex-removal" },
+      ]}
     />
   );
 };

@@ -5,6 +5,11 @@ import { Footer } from "@/components/Footer";
 import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { ChevronRight, Check, Shield } from "lucide-react";
 
+interface RelatedService {
+  name: string;
+  href: string;
+}
+
 interface ServicePageLayoutProps {
   title: string;
   subtitle: string;
@@ -13,6 +18,7 @@ interface ServicePageLayoutProps {
   taskList: string[];
   productsTitle: string;
   productsDescription: string[];
+  relatedServices?: RelatedService[];
 }
 
 const services = [
@@ -32,7 +38,10 @@ export function ServicePageLayout({
   taskList,
   productsTitle,
   productsDescription,
+  relatedServices,
 }: ServicePageLayoutProps) {
+  // Filter out current service from sidebar
+  const otherServices = services.filter(s => s.name !== title);
   const scrollToQuoteForm = () => {
     const element = document.querySelector("#quote");
     element?.scrollIntoView({ behavior: "smooth" });
@@ -118,13 +127,40 @@ export function ServicePageLayout({
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Every project starts with a site visit to assess the ceiling condition and take measurements. 
-                  For properties built before 1999, we take samples for asbestos testing before providing a fixed quote.
+                  For properties built before 1999, we take samples for{" "}
+                  <Link to="/services/asbestos-testing" className="text-primary hover:underline">
+                    asbestos testing
+                  </Link>{" "}
+                  before providing a fixed quote.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   We use polythene sheeting to seal the work area and HEPA-filtered dust extractors during removal. 
                   All waste is bagged and removed from site. We hold £5 million public liability insurance and 
                   our team is UKATA asbestos awareness certified.
                 </p>
+                
+                {/* Related Services Links */}
+                {relatedServices && relatedServices.length > 0 && (
+                  <div className="mt-8 p-6 bg-secondary rounded-xl">
+                    <h3 className="font-heading font-bold text-foreground mb-4">Related Services</h3>
+                    <p className="text-muted-foreground mb-4">
+                      You may also be interested in:
+                    </p>
+                    <ul className="space-y-2">
+                      {relatedServices.map((service) => (
+                        <li key={service.href}>
+                          <Link 
+                            to={service.href} 
+                            className="text-primary hover:underline font-medium inline-flex items-center gap-2"
+                          >
+                            <ChevronRight className="w-4 h-4" />
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -136,7 +172,7 @@ export function ServicePageLayout({
                   Other Services
                 </h4>
                 <div className="space-y-3">
-                  {services.map((service) => (
+                  {otherServices.map((service) => (
                     <Link
                       key={service.name}
                       to={service.href}

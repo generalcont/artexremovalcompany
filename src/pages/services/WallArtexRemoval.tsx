@@ -29,6 +29,11 @@ const WallArtexRemoval = () => {
       taskList={taskList}
       productsTitle="Removing Textured Wall Coatings"
       productsDescription={productsDescription}
+      relatedServices={[
+        { name: "Artex Ceiling Removal", href: "/services/artex-ceiling-removal" },
+        { name: "Smooth Plastering", href: "/services/smooth-plastering" },
+        { name: "Asbestos Testing", href: "/services/asbestos-testing" },
+      ]}
     />
   );
 };
