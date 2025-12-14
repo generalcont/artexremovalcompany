@@ -3,30 +3,31 @@ import artexService2 from "@/assets/artex-service-2.jpg";
 
 const CeilingRepair = () => {
   const taskList = [
-    "Damage assessment",
-    "Crack repair",
-    "Hole patching",
-    "Water damage repair",
-    "Joint reinforcement",
-    "Skim coating",
-    "Sanding and finishing",
-    "Ready for painting",
+    "Thorough damage assessment",
+    "Identification of underlying cause",
+    "Crack stabilisation and repair",
+    "Hole and damage patching",
+    "Water stain treatment",
+    "Localised skim plastering",
+    "Seamless blending with existing surface",
+    "Final finishing and preparation",
   ];
 
   const productsDescription = [
-    "Not every ceiling needs complete artex removal. Our ceiling repair service addresses cracks, holes, water damage, and other imperfections to restore your ceiling to perfect condition without the need for full removal and replacement.",
-    "We use professional repair techniques including crack stitching, patching, and localised skim coating to seamlessly blend repairs with your existing ceiling. The result is invisible repairs that look as good as new.",
-    "This service is ideal for ceilings with minor damage, ageing cracks, or areas affected by leaks. We can also repair and restore decorative features like coving and cornices to complete the transformation.",
+    "Not every ceiling problem requires complete removal and replacement. Many issues – cracks, small holes, water damage, or localised deterioration – can be repaired effectively, saving you time and money while still achieving excellent results.",
+    "Ceiling cracks often appear along joist lines or around light fittings due to natural building movement. We use jointing tape and flexible compounds to repair these cracks properly, preventing them from reappearing. For larger cracks, we use crack stitching techniques that reinforce the ceiling structure.",
+    "Water damage is common in UK properties, often from roof leaks, burst pipes, or condensation issues. Once the water source is fixed, we can repair the damaged ceiling by cutting back affected areas, treating for stains, and patching or re-plastering as needed. We match the existing ceiling texture or can provide a smooth finish if you're ready for a change.",
+    "Our repair service is ideal for maintaining otherwise good ceilings, preparing properties for sale, or addressing localised issues without the disruption of complete ceiling work. We assess each ceiling honestly and recommend repair only when it's the right solution – never when full removal would be more appropriate.",
   ];
 
   return (
     <ServicePageLayout
       title="Ceiling Repair"
-      subtitle="Professional repair of cracks, holes, and damage. Restore your ceiling to perfect condition."
+      subtitle="Expert repair of cracks, holes, water damage, and deterioration. Cost-effective solutions that restore your ceiling to perfect condition."
       heroImage={artexService2}
       description="Professional Ceiling Repair Service"
       taskList={taskList}
-      productsTitle="Professional Ceiling Repair Service"
+      productsTitle="When Repair Is The Right Choice"
       productsDescription={productsDescription}
     />
   );

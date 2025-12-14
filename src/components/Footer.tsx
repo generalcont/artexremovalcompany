@@ -15,13 +15,7 @@ const footerLinks = {
     { name: "About Us", href: "/#about" },
     { name: "Service Areas", href: "/service-areas" },
     { name: "Testimonials", href: "/#testimonials" },
-    { name: "Contact", href: "/#contact" },
-  ],
-  support: [
-    { name: "FAQ", href: "#" },
     { name: "Get a Quote", href: "/#quote" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
   ],
 };
 
@@ -97,22 +91,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
-          <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Support</h4>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom */}

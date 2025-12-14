@@ -3,30 +3,31 @@ import artexService1 from "@/assets/artex-service-1.jpg";
 
 const WallArtexRemoval = () => {
   const taskList = [
-    "Wall condition assessment",
-    "Furniture protection",
-    "Dust containment",
-    "Texture removal",
-    "Surface smoothing",
-    "Crack repair",
-    "Debris removal",
-    "Final cleaning",
+    "Assessment of wall texture type and condition",
+    "Asbestos testing if required",
+    "Complete room protection setup",
+    "Systematic texture removal",
+    "Underlying plaster assessment",
+    "Repair of any wall damage",
+    "Surface preparation for finishing",
+    "Full debris removal and cleaning",
   ];
 
   const productsDescription = [
-    "Artex and textured coatings aren't just found on ceilings - many properties have textured walls too. Our wall artex removal service uses the same professional techniques to transform your walls from dated and textured to smooth and modern.",
-    "Wall textures can be particularly challenging due to their visibility and the need for a perfect finish. Our experienced team takes extra care to ensure complete removal and a surface that's ready for plastering or decoration.",
-    "Whether you have one feature wall or entire rooms with textured walls, we can help. We work carefully around fixtures and fittings, and our dust containment ensures minimal mess in your home.",
+    "Textured wall coatings were popular throughout the 1970s and 1980s, often applied to hide imperfect plasterwork or add decorative interest. Today, these rough, dated finishes can make rooms feel smaller and darker while being difficult to clean and decorate around.",
+    "Wall artex removal requires different techniques than ceiling work. Walls are more visible and any imperfections in the finished surface are more noticeable. We take particular care with wall removal, working methodically from top to bottom and paying special attention to corners, window reveals, and areas around switches and sockets.",
+    "Our process involves controlled removal using specialist scrapers and steam where appropriate. We protect all fixtures, skirting boards, and flooring before starting work. Once the texture is removed, we assess the underlying plaster and make any repairs needed before the wall is ready for skim plastering.",
+    "Whether you have one textured feature wall or entire rooms to transform, we deliver consistent results. Many of our customers are surprised how much larger and brighter their rooms feel once the textured walls are replaced with smooth, modern finishes.",
   ];
 
   return (
     <ServicePageLayout
       title="Wall Artex Removal"
-      subtitle="Professional removal of textured coatings from walls. Same expert service for your walls as our ceiling work."
+      subtitle="Transform dated textured walls into smooth, modern surfaces. Expert removal with the same attention to detail as our ceiling work."
       heroImage={artexService1}
       description="Professional Wall Artex Removal"
       taskList={taskList}
-      productsTitle="Professional Wall Artex Removal"
+      productsTitle="Removing Textured Wall Coatings"
       productsDescription={productsDescription}
     />
   );
