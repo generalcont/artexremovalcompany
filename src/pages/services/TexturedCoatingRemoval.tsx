@@ -3,30 +3,31 @@ import artexService3 from "@/assets/artex-service-3.jpg";
 
 const TexturedCoatingRemoval = () => {
   const taskList = [
-    "Coating type assessment",
-    "Removal method selection",
-    "Full dust containment",
-    "Careful removal process",
-    "Surface preparation",
-    "Debris disposal",
-    "Area cleaning",
-    "Ready for finishing",
+    "Identification of coating type",
+    "Selection of appropriate removal method",
+    "Complete area protection",
+    "Careful, controlled removal",
+    "Treatment of underlying surface",
+    "Repair of any substrate damage",
+    "Surface preparation for finishing",
+    "Thorough cleanup and debris disposal",
   ];
 
   const productsDescription = [
-    "Beyond traditional artex, there are many types of textured coatings that can date a property. Our textured coating removal service handles woodchip wallpaper, popcorn ceilings, stipple finishes, and other decorative textures that you want removed.",
-    "Each type of textured coating requires a specific removal approach. Woodchip wallpaper, for example, needs steam and careful scraping, while some textured paints may require specialist solvents. Our team has experience with all types and knows the best approach for each.",
-    "Whatever type of textured coating you have, we can remove it safely and efficiently, leaving you with a smooth surface ready for modern decoration. We handle the entire process from assessment to completion.",
+    "Beyond traditional artex, many UK properties have other textured finishes that have fallen out of fashion. Woodchip wallpaper, popcorn ceilings, stipple paint, and various decorative textures were all popular at different times but now make properties feel dated and difficult to decorate.",
+    "Each textured finish requires a specific removal approach. Woodchip wallpaper needs thorough soaking and careful scraping to avoid damaging the plaster beneath. Popcorn or cottage cheese ceilings (common in 1960s-70s properties) often contain a polystyrene aggregate that requires particular techniques. Stipple paint finishes may need specialist solvents or steam depending on their composition.",
+    "We have experience removing all types of textured coatings and finishes. Before starting any job, we assess the coating type, test for asbestos if the property age warrants it, and select the most effective and least disruptive removal method for your specific situation.",
+    "Whatever textured finish you want removed, we handle the complete process from start to finish. You'll be left with smooth surfaces ready for modern decoration, with all debris removed and the area thoroughly cleaned. Many customers tell us their rooms feel completely different once dated textures are replaced with clean, smooth walls and ceilings.",
   ];
 
   return (
     <ServicePageLayout
       title="Textured Coating Removal"
-      subtitle="Complete removal of woodchip, popcorn, stipple, and other textured finishes. All coating types handled professionally."
+      subtitle="Specialist removal of woodchip, popcorn, stipple, and decorative textures. Whatever the coating, we have the experience to remove it properly."
       heroImage={artexService3}
       description="Textured Coating Removal Service"
       taskList={taskList}
-      productsTitle="Textured Coating Removal Service"
+      productsTitle="Removing All Types Of Textured Finishes"
       productsDescription={productsDescription}
     />
   );

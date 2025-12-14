@@ -3,30 +3,31 @@ import artexService3 from "@/assets/artex-service-3.jpg";
 
 const AsbestosTesting = () => {
   const taskList = [
-    "Sample collection",
-    "UKAS accredited lab testing",
-    "Full analysis report",
-    "Risk assessment",
-    "Removal recommendations",
-    "HSE compliant procedures",
-    "Safe disposal guidance",
-    "Certification provided",
+    "Careful sample collection from textured areas",
+    "Laboratory analysis at UKAS accredited facility",
+    "Testing for all six asbestos fibre types",
+    "Detailed written report within 2-3 days",
+    "Clear interpretation of results",
+    "Risk assessment and recommendations",
+    "Guidance on next steps if positive",
+    "Certificate of analysis provided",
   ];
 
   const productsDescription = [
-    "If your property was built before 2000, your artex coating may contain asbestos. Our comprehensive asbestos testing service provides peace of mind by determining whether your textured coating contains this hazardous material.",
-    "We collect samples carefully following HSE guidelines and send them to UKAS accredited laboratories for analysis. Results are typically available within 2-3 working days, and we provide a full report with clear recommendations.",
-    "If asbestos is detected, we can advise on the safest removal options and connect you with licensed asbestos removal contractors. Many artex coatings are asbestos-free and can be safely removed using our standard procedures.",
+    "If your home was built or renovated before 2000, there's a possibility your artex contains asbestos. White asbestos (chrysotile) was commonly mixed into artex compounds until it was banned in 1999. Testing before removal isn't just recommended – it's essential for your family's safety.",
+    "We collect small samples carefully following HSE Control of Asbestos Regulations 2012. Samples are sealed, labelled, and sent to a UKAS accredited laboratory where technicians use polarised light microscopy and dispersion staining to identify any asbestos fibres present.",
+    "Most artex coatings we test are asbestos-free, which means removal can proceed using our standard methods. If asbestos is detected, the concentration levels and your specific circumstances determine the best course of action. Low-risk asbestos artex can often be encapsulated or carefully removed by licensed contractors.",
+    "Testing typically costs a fraction of removal work but provides invaluable peace of mind. We explain your results clearly in plain English, not technical jargon, so you can make informed decisions about your property.",
   ];
 
   return (
     <ServicePageLayout
       title="Asbestos Testing"
-      subtitle="Comprehensive asbestos testing for artex and textured coatings. Essential safety testing before any removal work begins."
+      subtitle="Essential safety testing before artex removal. UKAS accredited laboratory analysis with clear, honest guidance on your results."
       heroImage={artexService3}
       description="Certified Asbestos Testing Service"
       taskList={taskList}
-      productsTitle="Certified Asbestos Testing Service"
+      productsTitle="Understanding Asbestos Testing"
       productsDescription={productsDescription}
     />
   );
