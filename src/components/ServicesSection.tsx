@@ -40,11 +40,17 @@ export function ServicesSection() {
         <div className="text-center mb-16">
           <span className="section-label">Our Services</span>
           <h2 className="section-title mt-4">
-            What We Do
+            Artex Removal & Plastering Services
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            From initial testing through to final decoration, we handle every stage 
-            of the artex removal process.
+            From initial{" "}
+            <Link to="/services/asbestos-testing" className="text-primary hover:underline">
+              asbestos testing
+            </Link>{" "}
+            through to final{" "}
+            <Link to="/services/smooth-plastering" className="text-primary hover:underline">
+              smooth plastering
+            </Link>, we handle every stage of the artex removal process.
           </p>
         </div>
 
@@ -82,6 +88,26 @@ export function ServicesSection() {
           ))}
         </div>
 
+        {/* Additional Services */}
+        <div className="text-center mb-16">
+          <p className="text-muted-foreground">
+            We also offer{" "}
+            <Link to="/services/wall-artex-removal" className="text-primary hover:underline font-medium">
+              wall artex removal
+            </Link>,{" "}
+            <Link to="/services/ceiling-repair" className="text-primary hover:underline font-medium">
+              ceiling repair
+            </Link>, and{" "}
+            <Link to="/services/textured-coating-removal" className="text-primary hover:underline font-medium">
+              textured coating removal
+            </Link>{" "}
+            for woodchip, stipple, and other decorative finishes.{" "}
+            <Link to="/services" className="text-primary hover:underline font-medium">
+              View all our services
+            </Link>.
+          </p>
+        </div>
+
         {/* Before/After Section */}
         <div className="bg-card rounded-3xl p-8 md:p-12 shadow-lg">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -91,9 +117,21 @@ export function ServicesSection() {
                 From Textured to Smooth
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                This living room ceiling in Bristol had stipple-pattern artex applied in 1985. 
-                We tested for asbestos (negative), removed the coating, and applied a smooth 
-                skim finish. The entire job took two days.
+                This living room ceiling in{" "}
+                <Link to="/service-areas/bristol" className="text-primary hover:underline">
+                  Bristol
+                </Link>{" "}
+                had stipple-pattern artex applied in 1985. We completed{" "}
+                <Link to="/services/asbestos-testing" className="text-primary hover:underline">
+                  asbestos testing
+                </Link>{" "}
+                (negative result), performed{" "}
+                <Link to="/services/artex-ceiling-removal" className="text-primary hover:underline">
+                  artex removal
+                </Link>, and finished with a{" "}
+                <Link to="/services/smooth-plastering" className="text-primary hover:underline">
+                  smooth skim
+                </Link>. The entire job took two days.
               </p>
               <ul className="space-y-3 mb-8">
                 {["Asbestos test: Negative", "Removal time: 1 day", "Plastering: 1 day"].map((item) => (

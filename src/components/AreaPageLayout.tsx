@@ -43,7 +43,15 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
             Artex Removal in {areaName}
           </h1>
           <p className="text-primary-foreground/80 mt-4 max-w-2xl mx-auto">
-            Artex and textured ceiling removal services in {areaName} and surrounding areas.
+            Professional{" "}
+            <Link to="/services/artex-ceiling-removal" className="text-primary hover:underline">
+              artex ceiling removal
+            </Link>{" "}
+            and{" "}
+            <Link to="/services/smooth-plastering" className="text-primary hover:underline">
+              smooth plastering
+            </Link>{" "}
+            services in {areaName} and surrounding areas.
           </p>
         </div>
       </section>
@@ -61,15 +69,93 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                 </h2>
               </div>
 
-              <p className="text-muted-foreground text-lg leading-relaxed mb-12">
-                {description}
-              </p>
+              <div className="prose prose-lg max-w-none text-muted-foreground mb-12">
+                <p className="leading-relaxed mb-6">
+                  {description}
+                </p>
+                
+                <h3 className="text-xl font-heading font-bold text-foreground mt-8 mb-4">
+                  Our Services in {areaName}
+                </h3>
+                <p className="leading-relaxed mb-4">
+                  We offer a complete range of artex and textured coating services to homeowners in {areaName}:
+                </p>
+                <ul className="space-y-3 mb-6 list-none pl-0">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span>
+                      <Link to="/services/artex-ceiling-removal" className="text-primary hover:underline font-medium">
+                        Artex ceiling removal
+                      </Link>{" "}
+                      – complete removal of swirl, stipple, and fan-pattern artex from ceilings
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span>
+                      <Link to="/services/wall-artex-removal" className="text-primary hover:underline font-medium">
+                        Wall artex removal
+                      </Link>{" "}
+                      – textured wall coatings removed with the same professional approach
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span>
+                      <Link to="/services/asbestos-testing" className="text-primary hover:underline font-medium">
+                        Asbestos testing
+                      </Link>{" "}
+                      – UKAS-accredited laboratory analysis for pre-1999 properties
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span>
+                      <Link to="/services/smooth-plastering" className="text-primary hover:underline font-medium">
+                        Smooth plastering
+                      </Link>{" "}
+                      – professional skim finish ready for painting
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span>
+                      <Link to="/services/ceiling-repair" className="text-primary hover:underline font-medium">
+                        Ceiling repair
+                      </Link>{" "}
+                      – crack repair, water damage restoration, and localised fixes
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span>
+                      <Link to="/services/textured-coating-removal" className="text-primary hover:underline font-medium">
+                        Textured coating removal
+                      </Link>{" "}
+                      – woodchip, popcorn, stipple, and other decorative textures
+                    </span>
+                  </li>
+                </ul>
+
+                <h3 className="text-xl font-heading font-bold text-foreground mt-8 mb-4">
+                  Why Choose Us in {areaName}?
+                </h3>
+                <p className="leading-relaxed">
+                  Many properties in {areaName} were built or renovated during the 1970s and 1980s when artex 
+                  was a popular ceiling finish. If your home was built before 1999, your artex may contain 
+                  asbestos and should be tested before any work begins. We provide comprehensive{" "}
+                  <Link to="/services/asbestos-testing" className="text-primary hover:underline">
+                    asbestos testing
+                  </Link>{" "}
+                  and follow all HSE safety guidelines to protect your family during the removal process.
+                </p>
+              </div>
 
               {/* Areas We Serve */}
               {neighborhoods.length > 0 && (
                 <div className="border-t border-border pt-12">
                   <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
-                    Areas We Cover
+                    Areas We Cover Near {areaName}
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {neighborhoods.map((neighborhood, index) => (
@@ -113,6 +199,45 @@ export function AreaPageLayout({ areaName, description, neighborhoods }: AreaPag
                     View All Areas
                   </Button>
                 </Link>
+              </div>
+
+              {/* Services Card */}
+              <div className="bg-secondary rounded-2xl p-6 mt-6">
+                <h4 className="font-heading text-xl font-bold text-foreground mb-4">
+                  Our Services
+                </h4>
+                <ul className="space-y-3">
+                  <li>
+                    <Link to="/services/artex-ceiling-removal" className="text-primary hover:underline">
+                      Artex Ceiling Removal
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/smooth-plastering" className="text-primary hover:underline">
+                      Smooth Plastering
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/asbestos-testing" className="text-primary hover:underline">
+                      Asbestos Testing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/wall-artex-removal" className="text-primary hover:underline">
+                      Wall Artex Removal
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/ceiling-repair" className="text-primary hover:underline">
+                      Ceiling Repair
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/textured-coating-removal" className="text-primary hover:underline">
+                      Textured Coating Removal
+                    </Link>
+                  </li>
+                </ul>
               </div>
 
               {/* Contact Card */}

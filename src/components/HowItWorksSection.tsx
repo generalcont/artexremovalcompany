@@ -1,4 +1,5 @@
 import { FileText, Wrench, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -28,9 +29,16 @@ export function HowItWorksSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="section-label">How It Works</span>
-          <h2 className="section-title mt-4">Our Process Step by Step</h2>
+          <h2 className="section-title mt-4">Our Artex Removal Process</h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Here's exactly what happens when you book us for an artex removal project.
+            Here's exactly what happens when you book us for{" "}
+            <Link to="/services/artex-ceiling-removal" className="text-primary hover:underline">
+              artex ceiling removal
+            </Link>{" "}
+            or{" "}
+            <Link to="/services/wall-artex-removal" className="text-primary hover:underline">
+              wall artex removal
+            </Link>.
           </p>
         </div>
 
@@ -60,6 +68,25 @@ export function HowItWorksSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Additional info with links */}
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            All projects include{" "}
+            <Link to="/services/asbestos-testing" className="text-primary hover:underline font-medium">
+              asbestos testing
+            </Link>{" "}
+            for pre-1999 properties and professional{" "}
+            <Link to="/services/smooth-plastering" className="text-primary hover:underline font-medium">
+              smooth plastering
+            </Link>{" "}
+            to complete the transformation. Need{" "}
+            <Link to="/services/ceiling-repair" className="text-primary hover:underline font-medium">
+              ceiling repairs
+            </Link>{" "}
+            instead of full removal? We can help with that too.
+          </p>
         </div>
 
         {/* Connecting line for desktop */}

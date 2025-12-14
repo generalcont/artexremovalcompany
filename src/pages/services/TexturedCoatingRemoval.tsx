@@ -29,6 +29,11 @@ const TexturedCoatingRemoval = () => {
       taskList={taskList}
       productsTitle="Removing All Types Of Textured Finishes"
       productsDescription={productsDescription}
+      relatedServices={[
+        { name: "Artex Ceiling Removal", href: "/services/artex-ceiling-removal" },
+        { name: "Asbestos Testing", href: "/services/asbestos-testing" },
+        { name: "Smooth Plastering", href: "/services/smooth-plastering" },
+      ]}
     />
   );
 };

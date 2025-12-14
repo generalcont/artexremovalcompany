@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Award, Users, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 import beforeAfterImage from "@/assets/artex-before-after.jpg";
 
 const features = [
@@ -55,14 +56,25 @@ export function AboutSection() {
               Artex and textured coatings applied before 1999 often contain chrysotile asbestos. 
               Disturbing these materials without proper testing and containment can release 
               harmful fibres into your home. Our team holds UKATA certification and follows 
-              HSE guidelines on every project.
+              HSE guidelines on every project. We recommend{" "}
+              <Link to="/services/asbestos-testing" className="text-primary hover:underline font-medium">
+                asbestos testing
+              </Link>{" "}
+              before any removal work begins.
             </p>
 
             <p className="text-muted-foreground mb-8 leading-relaxed">
               We start by taking samples for laboratory analysis. If asbestos is found, we use 
-              licensed removal methods. If the coating is asbestos-free, we proceed with 
-              mechanical removal and full dust extraction. The result is a smooth, paint-ready 
-              ceiling that adds value to your property.
+              licensed removal methods. If the coating is asbestos-free, we proceed with our{" "}
+              <Link to="/services/artex-ceiling-removal" className="text-primary hover:underline font-medium">
+                artex ceiling removal
+              </Link>{" "}
+              service using mechanical removal and full dust extraction. The result is a smooth, 
+              paint-ready ceiling achieved through our{" "}
+              <Link to="/services/smooth-plastering" className="text-primary hover:underline font-medium">
+                smooth plastering
+              </Link>{" "}
+              service that adds value to your property.
             </p>
 
             {/* Feature list */}

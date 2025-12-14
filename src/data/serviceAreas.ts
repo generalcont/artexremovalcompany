@@ -152,7 +152,14 @@ const citiesData: Record<string, string[]> = {
 
 // Generate description for an area
 const generateDescription = (name: string, region: string): string => {
-  return `Looking for professional eco-friendly cleaning services in ${name}? Our expert team provides comprehensive house cleaning, office cleaning, deep cleaning, and move-in/out cleaning services throughout ${name} and surrounding areas in ${region}. We use only environmentally-friendly products that are safe for your family, pets, and the planet while delivering spotless results every time.`;
+  const descriptions = [
+    `We provide professional artex removal and smooth plastering services throughout ${name} and the surrounding ${region} area. Many homes in ${name} were built during the 1970s and 1980s when textured ceilings were popular. If your property dates from before 1999, the artex coating may contain asbestos, which is why we always recommend testing before any removal work begins. Our UKATA-certified team follows HSE guidelines to ensure safe removal, complete dust containment, and a perfect smooth finish.`,
+    `Looking to modernise your ceilings in ${name}? Our experienced artex removal specialists cover all areas of ${region}, removing textured coatings and applying flawless smooth plaster finishes. We understand the housing stock in ${name} – from Victorian terraces to 1980s builds – and adapt our approach to suit each property. Every job includes asbestos testing for older properties, professional dust containment, and expert plastering that transforms your rooms.`,
+    `Our artex removal service is available throughout ${name} and neighbouring areas in ${region}. Textured ceilings can make rooms feel dated and are difficult to decorate around. We remove swirl, stipple, and fan-pattern artex safely, test for asbestos when required, and finish with a smooth skim coat that's ready for painting. We've completed hundreds of projects across ${region} and take pride in our attention to detail and clean working practices.`
+  ];
+  // Use a consistent index based on the name length for variety
+  const index = name.length % descriptions.length;
+  return descriptions[index];
 };
 
 // Get neighborhoods for a region or city

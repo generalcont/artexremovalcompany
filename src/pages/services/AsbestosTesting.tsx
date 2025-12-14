@@ -29,6 +29,11 @@ const AsbestosTesting = () => {
       taskList={taskList}
       productsTitle="Understanding Asbestos Testing"
       productsDescription={productsDescription}
+      relatedServices={[
+        { name: "Artex Ceiling Removal", href: "/services/artex-ceiling-removal" },
+        { name: "Wall Artex Removal", href: "/services/wall-artex-removal" },
+        { name: "Textured Coating Removal", href: "/services/textured-coating-removal" },
+      ]}
     />
   );
 };
