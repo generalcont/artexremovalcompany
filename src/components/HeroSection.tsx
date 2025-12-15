@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Star, Shield, Award } from "lucide-react";
+import { CheckCircle, Star, Award } from "lucide-react";
 import heroImage from "@/assets/artex-hero.jpg";
 
 const features = ["Asbestos Testing", "Dust Containment", "Smooth Finish"];
@@ -42,10 +42,6 @@ export function HeroSection() {
           <div className="animate-fade-up">
             {/* Trust badges */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="flex items-center gap-2 bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary-foreground">£5m Public Liability</span>
-              </div>
               <div className="flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Award className="w-4 h-4 text-accent" />
                 <span className="text-sm font-medium text-primary-foreground">UKATA Certified</span>
