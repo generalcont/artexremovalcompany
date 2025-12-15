@@ -67,6 +67,10 @@ export function ServicesSection() {
                 <img
                   src={service.image}
                   alt={service.title}
+                  width={384}
+                  height={288}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -151,6 +155,10 @@ export function ServicesSection() {
               <img
                 src={beforeAfterImage}
                 alt="Before and after comparison of artex ceiling removal in a Bristol living room"
+                width={568}
+                height={426}
+                loading="lazy"
+                decoding="async"
                 className="w-full rounded-2xl shadow-xl"
               />
             </div>

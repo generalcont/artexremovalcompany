@@ -45,7 +45,7 @@ export function Header() {
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={logoIcon} alt="Artex Removal Company Logo" className="w-10 h-10 object-contain" />
+            <img src={logoIcon} alt="Artex Removal Company Logo" width={40} height={40} className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
               <span className="font-heading text-lg font-bold text-foreground leading-tight">
                 Artex Removal
