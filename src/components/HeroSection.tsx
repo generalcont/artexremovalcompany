@@ -22,6 +22,9 @@ export function HeroSection() {
         <img
           src={heroImage}
           alt="Plasterer applying smooth finish to ceiling after artex removal"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
