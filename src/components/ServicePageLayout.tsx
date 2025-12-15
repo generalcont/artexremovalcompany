@@ -135,8 +135,7 @@ export function ServicePageLayout({
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   We use polythene sheeting to seal the work area and HEPA-filtered dust extractors during removal. 
-                  All waste is bagged and removed from site. We hold £5 million public liability insurance and 
-                  our team is UKATA asbestos awareness certified.
+                  All waste is bagged and removed from site. Our team is UKATA asbestos awareness certified.
                 </p>
                 
                 {/* Related Services Links */}
@@ -203,7 +202,7 @@ export function ServicePageLayout({
                   <Shield className="w-10 h-10 text-primary" />
                   <div>
                     <p className="font-bold text-foreground">Fully Insured</p>
-                    <p className="text-sm text-muted-foreground">£5m public liability</p>
+                    <p className="text-sm text-muted-foreground">Comprehensive cover</p>
                   </div>
                 </div>
                 <p className="text-muted-foreground text-sm">

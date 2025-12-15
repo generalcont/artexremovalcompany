@@ -3,7 +3,7 @@ import { Shield, Wrench, Clock, Award, CheckCircle, Users } from "lucide-react";
 const reasons = [
   {
     icon: Shield,
-    title: "£5m Public Liability Insurance",
+    title: "Fully Insured",
     description: "All work is covered by comprehensive insurance, giving you complete peace of mind.",
   },
   {
