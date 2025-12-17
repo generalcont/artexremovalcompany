@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 import { Send, Shield, Clock, Award } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,7 +20,7 @@ export function QuoteFormSection() {
     name: "",
     email: "",
     postcode: "",
-    serviceType: "",
+    phone: "",
     message: "",
   });
 
@@ -40,7 +40,7 @@ export function QuoteFormSection() {
       name: "",
       email: "",
       postcode: "",
-      serviceType: "",
+      phone: "",
       message: "",
     });
     setIsSubmitting(false);
@@ -125,22 +125,15 @@ export function QuoteFormSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="serviceType">Service Required *</Label>
-                  <Select
-                    value={formData.serviceType}
-                    onValueChange={(value) => setFormData({ ...formData, serviceType: value })}
+                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="e.g. 07123 456789"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="artex-removal">Artex Removal</SelectItem>
-                      <SelectItem value="plastering">Smooth Plastering</SelectItem>
-                      <SelectItem value="asbestos-testing">Asbestos Testing Only</SelectItem>
-                      <SelectItem value="full-service">Removal + Plastering</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  />
                 </div>
               </div>
 
